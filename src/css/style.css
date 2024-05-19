@@ -1,0 +1,373 @@
+/* 
+    Individual Project (UAS Lab)
+    Frederick Armando Jerusha - 222203085
+    style.css
+ */
+
+:root {
+    --main-color: #2cb851;
+    --red: #e74c3c;
+    --light-color: #888;
+    --light-bg: #f8f8f8;
+    --black: #333;
+    --white: #fff;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--light-bg);
+}
+
+section {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--black);
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+
+.message {
+    position: sticky;
+    top: 2rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    background-color: var(--white);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    z-index: 1000;
+    max-width: 1200px;
+    animation: fadeIn 0.4s cubic-bezier(0.3, 1.41, 0.4, 1.46);
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(0.5) translateY(1rem);
+    }
+}
+
+.message span {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.message i {
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: var(--red);
+    transition: color 0.2s ease;
+}
+
+.message i:hover {
+    color: var(--black);
+}
+
+.btn,
+.option-btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    border-radius: 2rem;
+    color: var(--white);
+    text-align: center;
+    text-transform: capitalize;
+    transition: background-color 0.2s ease;
+}
+
+.btn {
+    background-color: var(--main-color);
+}
+
+.option-btn {
+    background-color: var(--black);
+}
+
+.btn:hover {
+    background-color: var(--black);
+}
+
+.option-btn:hover {
+    background-color: var(--main-color);
+}
+
+.form-container form {
+    margin: 0 auto;
+    max-width: 50rem;
+    border-radius: 2rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
+
+.form-container form p {
+    padding-top: 1rem;
+    font-size: 1.8rem;
+    color: var(--light-color);
+}
+
+.form-container form p span {
+    color: var(--red);
+}
+
+.form-container form .box {
+    width: 100%;
+    border-radius: 1rem;
+    background-color: var(--light-bg);
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    margin: 1rem 0;
+    border: var(--border);
+    transition: box-shadow 0.2s ease;
+}
+
+.form-container form .box:focus {
+    box-shadow: 0 0 0 0.2rem var(--main-color);
+}
+
+
+.playlist .box-container .box:hover {
+    transform: translateY(-0.5rem);
+}
+
+
+.playlist .box-container .box {
+    border-radius: 1.5rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+    max-width: 25rem;
+    flex: 0 0 25rem;
+}
+.playlist .box-container .box .album {
+    border-radius: 50%;
+    object-fit: contain;
+    height: 12rem;
+    width: 12rem;
+}
+
+.playlist .box-container .box .name {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-top: 0.8rem;
+}
+
+.playlist .box-container .box .artist {
+    margin: 0.4rem 0;
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+
+.playlist .box-container .box .flex {
+    margin-top: 1rem;
+    border-top: var(--border);
+    display: flex;
+}
+
+.playlist .box-container .box .flex>* {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.playlist .box-container .box .flex a {
+    border-left: var(--border);
+}
+
+.playlist .box-container .box .flex i {
+    margin-right: 0.8rem;
+    color: var(--main-color);
+}
+
+.playlist .box-container .box .flex span {
+    color: var(--light-color);
+}
+
+.playlist .box-container .box .flex>*:hover {
+    color: var(--main-color);
+}
+
+.playlist .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    position: relative;
+}
+
+.playlist .box-container .box-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.playlist .box-container .box-row .box {
+    border-radius: 1.5rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+    max-width: 25rem;
+    flex: 0 0 25rem;
+}
+.playlist .box-container .more-btn {
+    padding: 1.5rem;
+    position: fixed;
+    bottom: 2rem;
+    left: 0;
+    /* Changed */
+    right: 0;
+    /* Added */
+    margin: 0 auto;
+    /* Added */
+    display: flex;
+    /* Added */
+    justify-content: center;
+    /* Added */
+    z-index: 1000;
+}
+
+.playlist .box-container .more-btn .btn {
+    margin-top: 0;
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+    border-radius: 2rem;
+    background-color: var(--main-color);
+    color: var(--white);
+    transition: background-color 0.2s ease;
+}
+
+.playlist .box-container .more-btn .btn:hover {
+    background-color: var(--black);
+}
+
+.music-player {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.music-player.active {
+    display: flex;
+}
+
+.music-player .box {
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    width: 30rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+.music-player .box .album {
+    margin: 1.5rem;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    animation: beat 2s cubic-bezier(0.3, 1.41, 0.4, 1.46) infinite;
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+.music-player .box .name {
+    font-size: 1.8rem;
+    color: var(--black);
+}
+
+.music-player .box .artist {
+    margin: 0.4rem 0;
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+    
+    .music-player .box .music {
+        border-top: var(--border);
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .music-player .box .music::-webkit-media-controls-enclosure {
+        background: none;
+        border-radius: 1rem;
+    }
+    
+    .music-player #close {
+        position: absolute;
+        top: 2rem;
+        right: 2.5rem;
+        cursor: pointer;
+        color: var(--white);
+        font-size: 5rem;
+        transition: transform 0.2s ease;
+    }
+    
+    .music-player #close:hover {
+        transform: rotate(90deg);
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .playlist .box-container {
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        }
+    
+        .music-player .box {
+            width: 90%;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .playlist .box-container {
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        }
+    }
