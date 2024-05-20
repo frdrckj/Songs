@@ -4,13 +4,12 @@ Frederick Armando Jerusha - 222203085
 Script.js
  */
 
-
-let musicArtist = musicPlayer.querySelector('.artist');
+let playBtn = document.querySelectorAll('.playlist .box-container .box .play');
 let musicPlayer = document.querySelector('.music-player');
-let music = musicPlayer.querySelector('.music');
 let musicAlbum = musicPlayer.querySelector('.album');
 let musicName = musicPlayer.querySelector('.name');
-let playBtn = document.querySelectorAll('.playlist .box-container .box .play');
+let musicArtist = musicPlayer.querySelector('.artist');
+let music = musicPlayer.querySelector('.music');
 
 playBtn.forEach(play =>{
 
@@ -38,3 +37,58 @@ document.querySelector('#close').onclick = () =>{
    musicPlayer.classList.remove('active');
    music.pause();
 }
+
+
+const tabs = document.querySelectorAll('.navtab');
+const underline = document.querySelector('.underline');
+
+function updateUnderline() {
+    const activeTab = document.querySelector('.navtab.active');
+    underline.style.width = `${activeTab.offsetWidth}px`;
+    underline.style.left = `${activeTab.offsetLeft}px`;
+}
+
+function setActiveTab(tabId) {
+    tabs.forEach(tab => tab.classList.remove('active'));
+    const activeTab = document.getElementById(tabId);
+    if (activeTab) {
+        activeTab.classList.add('active');
+    }
+}
+
+// Set the initial active tab based on the current URL
+const currentPath = window.location.pathname;
+const pathParts = currentPath.split('/');
+const currentFile = pathParts[pathParts.length - 1];
+
+let currentTabId;
+switch (currentFile) {
+    case 'index.php':
+        currentTabId = 'home-tab';
+        break;
+    case 'list.php':
+        currentTabId = 'list-tab';
+        break;
+    case 'about.php':
+        currentTabId = 'about-tab';
+        break;
+    case 'upload.php':
+        currentTabId = 'upload-tab';
+        break;
+    default:
+        currentTabId = 'home-tab';
+}
+
+setActiveTab(currentTabId);
+
+tabs.forEach(tab => {
+    const tabLink = tab.querySelector('a');
+    tabLink.addEventListener('click', () => {
+        setActiveTab(tab.id);
+        updateUnderline();
+    });
+});
+
+window.addEventListener('resize', updateUnderline);
+updateUnderline();
+

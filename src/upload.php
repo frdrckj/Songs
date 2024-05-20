@@ -68,6 +68,7 @@ if(isset($_POST['submit'])){
 
 </head>
 <body>
+   <?php include 'navbar.php'; ?>
 
 <?php
 if(isset($message)){

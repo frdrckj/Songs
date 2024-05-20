@@ -1,9 +1,4 @@
-<!-- 
-    Individual Project (UAS Lab)
-    Frederick Armando Jerusha - 222203085
-    index.php
- -->
-
+<!-- Individual Project (UAS Lab) Frederick Armando Jerusha - 222203085 home.php -->
 <?php include 'connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,83 +6,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citfy</title>
+    <title>Home - Citify</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 13rem;
         }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
+        .home .content {
+            text-align: center;
+            max-width: 800px;
         }
-
-        .dropdown-content form {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
+        .home .content h3 {
+            font-size: 3.5rem;
         }
-
-        .dropdown-content form:hover {
-            background-color: #FFFFFF;
+        .home .content p {
+            font-size: 2rem;
+            margin: 2rem 0;
         }
-
-        .dropdown.show .dropdown-content {
-            display: block;
+        .home .content .btn {
+            font-size: 2rem;
+            padding: 1.5rem 4rem;
         }
     </style>
 </head>
 <body>
-    <section class="playlist">
-        <h3 class="heading">Citfy</h3>
-        <div class="box-container">
-            <?php
-            $select_songs = $conn->prepare("SELECT * FROM `songs`");
-            $select_songs->execute();
-            if($select_songs->rowCount() > 0){
-                while($fetch_song = $select_songs->fetch(PDO::FETCH_ASSOC)){
-            ?>
-            <div class="box">
-                <?php if($fetch_song['album'] != ''){ ?>
-                <img src="uploaded_album/<?= $fetch_song['album']; ?>" alt="" class="album">
-                <?php }else{ ?>
-                <img src="images/disc.png" alt="" class="album">
-                <?php } ?>
-                <div class="name"><?= htmlspecialchars($fetch_song['name']); ?></div>
-                <div class="artist"><?= htmlspecialchars($fetch_song['artist']); ?></div>
-                <div class="flex">
-                    <div class="play" data-src="uploaded_music/<?= htmlspecialchars($fetch_song['music']); ?>"><i class="fas fa-play"></i><span>Play</span></div>
-                    <div class="dropdown">
-                        <i class="fas fa-ellipsis-v" onclick="toggleDropdown(this)"></i>
-                        <div class="dropdown-content">
-                            <form action="update.php" method="post" class="update-form">
-                                <input type="hidden" name="id" value="<?= $fetch_song['id']; ?>">
-                                <button type="submit" class="play"><i class="fas fa-edit"></i><span>Update</span></button>
-                            </form>
-                            <form action="delete.php" method="post" class="delete-form">
-                                <input type="hidden" name="id" value="<?= $fetch_song['id']; ?>">
-                                <button type="submit" class="play"><i class="fas fa-trash-alt"></i><span>Delete</span></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php
-                }
-            }
-            ?>
-            <div class="box more-btn">
-                <a href="upload.php" class="btn">Upload New Song</a>
-            </div>
+    <?php include 'navbar.php'; ?>
+
+    <section class="home">
+        <div class="content">
+            <h3>Welcome to Citify</h3>
+            <br>
+            <br>
+            <br>
+            <a href="list.php" class="btn">Browse Music</a>
         </div>
     </section>
 
@@ -101,13 +58,6 @@
         </div>
     </div>
 
-    <!-- custom js file link -->
     <script src="js/script.js"></script>
-    <script>
-        function toggleDropdown(element) {
-            var dropdown = element.parentNode;
-            dropdown.classList.toggle("show");
-        }
-    </script>
 </body>
 </html>
