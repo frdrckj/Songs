@@ -56,7 +56,6 @@ function setActiveTab(tabId) {
     }
 }
 
-// Set the initial active tab based on the current URL
 const currentPath = window.location.pathname;
 const pathParts = currentPath.split('/');
 const currentFile = pathParts[pathParts.length - 1];

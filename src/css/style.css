@@ -250,15 +250,10 @@ section {
     position: fixed;
     bottom: 2rem;
     left: 0;
-    /* Changed */
     right: 0;
-    /* Added */
     margin: 0 auto;
-    /* Added */
     display: flex;
-    /* Added */
     justify-content: center;
-    /* Added */
     z-index: 1000;
 }
 
@@ -358,7 +353,6 @@ section {
     transform: rotate(90deg);
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .playlist .box-container {
         grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -378,7 +372,7 @@ section {
 
 
 /* 
-
+    Navbar
 */
 .navtabs .logo {
     position: absolute;
@@ -397,7 +391,6 @@ section {
     justify-content: center;
     margin-bottom: 2rem;
     background-color: var(--main-color);
-    /* Added background color */
     padding: 1rem 2rem;
     position: relative;
 }
@@ -415,7 +408,6 @@ section {
 
 .navtab a {
     color: var(--white);
-    /* Changed link color to white */
     text-decoration: none;
     font-size: 1.8rem;
     padding: 1rem 2rem;
@@ -427,7 +419,6 @@ section {
 .navtab.active a {
     background-color: var(--white);
     color: var(--main-color);
-    /* Changed active link color to black */
     font-weight: 600;
 }
 
@@ -446,7 +437,6 @@ section {
 .navtab a:hover {
     background-color: var(--light-bg);
     color: var(--main-color);
-    /* Changed hover link color to black */
 }
 
 .underline {
@@ -454,6 +444,5 @@ section {
     bottom: 0;
     height: 2px;
     background: var(--white);
-    /* Changed underline color to white */
     transition: left 0.3s ease, width 0.3s ease;
 }
