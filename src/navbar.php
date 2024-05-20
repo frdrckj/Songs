@@ -1,3 +1,10 @@
+<!-- 
+    Individual Project (UAS Lab) 
+    Frederick Armando Jerusha - 222203085 
+    navbar.php 
+-->
+
+
 <div class="navtabs">
     <div class="logo">
         <a href="index.php">

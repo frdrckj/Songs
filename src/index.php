@@ -1,4 +1,9 @@
-<!-- Individual Project (UAS Lab) Frederick Armando Jerusha - 222203085 home.php -->
+<!-- 
+    Individual Project (UAS Lab) 
+    Frederick Armando Jerusha - 222203085 
+    index.php 
+-->
+
 <?php include 'connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">

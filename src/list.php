@@ -1,3 +1,10 @@
+<!-- 
+    Individual Project (UAS Lab) 
+    Frederick Armando Jerusha - 222203085 
+    list.php 
+-->
+
+
 <?php include 'connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
