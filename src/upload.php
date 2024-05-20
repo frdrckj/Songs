@@ -97,7 +97,7 @@ if(isset($message)){
       <p>Select Album Cover <span>*</span></p>
       <input type="file" name="album" class="box" accept="image/*">
       <input type="submit" value="upload" class="btn" name="submit">
-      <a href="index.php" class="option-btn">Back Home</a>
+      <a href="list.php" class="option-btn">Back Home</a>
    </form>
 
 </section>

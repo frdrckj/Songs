@@ -25,13 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
         $delete = $conn->prepare("DELETE FROM `songs` WHERE id = ?");
         $delete->execute([$id]);
 
-        header("Location: index.php");
+        header("Location: list.php");
         exit();
     } else {
         $message = 'Song not found!';
     }
 } else {
-    header("Location: index.php");
+    header("Location: list.php");
     exit();
 }
 ?>

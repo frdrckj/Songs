@@ -69,11 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
         $update->execute([$name, $artist, $album, $music, $id]);
 
         $message[] = 'Song updated successfully!';
-        header("Location: index.php");
+        header("Location: list.php");
         exit();
     }
 } else {
-    header("Location: index.php");
+    header("Location: list.php");
     exit();
 }
 ?>
@@ -141,7 +141,7 @@ if (isset($message)) {
         <input type="file" name="album" class="box" accept="image/*">
 
         <input type="submit" value="Update" class="btn" name="update">
-        <a href="index.php" class="option-btn">Back Home</a>
+        <a href="list.php" class="option-btn">Back Home</a>
     </form>
 </section>
 
