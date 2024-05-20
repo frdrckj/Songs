@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
 
 </head>
 <body>
-
+<?php include 'navbar.php'; ?>
 <?php
 if (isset($message)) {
     foreach ($message as $msg) {
